@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(0, 79%, 72%);
+  font-family: "opensans", sans-serif;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  width: auto;
+  height: 15rem;
+  background-color: aqua;
+  margin: auto;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.countdown-number {
+  font-size: 36px;
+  margin-right: 0.05rem;
+}
+
+.countdown-text {
+  font-size: 12px;
+  margin-left: 0.5rem;
+}

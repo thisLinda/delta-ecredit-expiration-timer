@@ -1,21 +1,24 @@
-import dayjs from 'dayjs'
+document.addEventListener('DOMContentLoaded', function(e) {
+  // define target date variable for before 10/27/24
+  const targetDate = dayjs('Saturday October 26, 2024 23:59:59')
 
-// define target date variable for 10/27/
-const targetDate = dayjs('Saturday October 26, 2024 23:59:59')
-console.log(targetDate.format('dddd MMMM DD, YYYY HH:mm:ss'))
+  // calculate remaining days
+  const timeDifference = targetDate.diff(dayjs(), "day")
 
-// define current date variable
+  // number span
+  const numberSpan = document.createElement("span")
+  numberSpan.textContent = timeDifference
+  numberSpan.classList.add("countdown-number")
 
+  // string span
+  const textSpan = document.createElement("span")
+  textSpan.textContent = "  days"
+  textSpan.classList.add("countdown-text")
 
-
-// calculate remaining days
-  // const timeDifference = targetDate.getTime() - currentDate.getTime()
-  // console.log(timeDifference)
-
-// calculate the time difference in milliseconds
-
-
-// convert the time difference to days
-
-
-// update countdown container
+  // append spans to container
+  const countdownContainer = document.getElementById("countdown")
+  // clear existing content
+  countdownContainer.innerText = ""
+  countdownContainer.appendChild(numberSpan)
+  countdownContainer.appendChild(textSpan)
+})
