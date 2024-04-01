@@ -1,6 +1,6 @@
 
 ## :star2: About this Project
-It~~'ll be~~ is an unstyled countdown timer!
+It ~~'ll be~~ is an unstyled countdown timer!
 
 
 
