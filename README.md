@@ -1,6 +1,6 @@
 
 # :star2: About this Project
-PWA learning. It's a functioning and sparsely styled countdown timer!
+PWA learning. It's a functioning and sparsely styled countdown timer running in my browser!
 
 ## :toolbox: Getting Started
 
@@ -8,15 +8,13 @@ PWA learning. It's a functioning and sparsely styled countdown timer!
 
 This project uses NPM as package manager
 
-### :running: Run Locally
+### :gear: Install and :running: Run Locally
 
 Clone the project:
 
 ```bash
   git clone https://github.com/thisLinda/delta-ecredit-expiration-timer
 ```
-
-### :gear: Install and Run
 
 Install npm:
 
