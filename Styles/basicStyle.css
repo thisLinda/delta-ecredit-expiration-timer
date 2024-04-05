@@ -7,7 +7,7 @@
 }
 
 body {
-  background: hsl(0, 79%, 72%);
+  background-color: #808080;
   font-family: "opensans", sans-serif;
 }
 
@@ -15,7 +15,6 @@ main {
   max-width: 900px;
   margin: auto;
   padding: 0.5rem;
-  text-align: center;
 }
 
 nav {
@@ -26,12 +25,13 @@ nav {
 
 #countdown {
   display: flex;
+  background: linear-gradient(45deg, #2b867b, #20cbc7);
+  color: #ffffff;
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
   width: auto;
   height: 15rem;
-  background-color: aqua;
   margin: auto;
   overflow: hidden;
   object-fit: cover;
@@ -45,4 +45,8 @@ nav {
 .countdown-text {
   font-size: 12px;
   margin-left: 0.5rem;
+}
+
+.icon {
+  transform: scale(3)
 }

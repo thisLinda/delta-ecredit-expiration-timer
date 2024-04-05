@@ -4,8 +4,15 @@
   "short_name": "eCreditTimer",
   "description": "A simple countdown timer for personal use.",
   "start_url": "index.html",
-  "background_color": "#f08080",
-  "theme_color": "#f08080",
+  "background_color": "#20cbc7",
+  "theme_color": "#20cbc7",
   "orientation": "any",
-  "display": "standalone"
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ]
 }
