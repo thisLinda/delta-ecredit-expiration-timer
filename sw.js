@@ -1,36 +1,32 @@
 const CACHE_NAME = `ecredit-timer-v1`
+const STATIC_ASSETS = [
+  '/',
+  '/app.js',
+  '/Styles/basicStyle.css'
+]
 
 //  the install event pre-caches initial resources
 self.addEventListener('install', event => {
-  event.waitUntil((async () => {
-    const cache = await caches.open(CACHE_NAME)
-    cache.addAll([
-      '/',
-      '/app.js',
-      '/Styles/basicStyle.css'
-    ])
-  })())
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(STATIC_ASSETS))
+  )
 })
 
-self.addEventListener('fetch', event => {
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE_NAME)
-
-    // gets the resource from the cache
-    const cachedResponse = await cache.match(event.request)
-    if (cachedResponse) {
-      return cachedResponse
-    } else {
-      try {
-        // if the response wasn't cached, try the network
-        const fetchResponse = await fetch(event.request)
-
-        // saves the resource in the cache and returns it
-        cache.put(event.request, fetchResponse.clone())
-        return fetchResponse
-      } catch (e) {
-        // network failed
-      }
-    }
-  })())
+// fetching strategy: stale-while-revalidate
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(cachedResponse => {
+        const fetchPromise = fetch(e.request).then
+        ((networkResponse) => {
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(e.request, networkResponse.clone())
+            return networkResponse
+          })
+          return networkResponse
+        })
+        return cachedResponse || fetchPromise
+      })
+  )
 })
