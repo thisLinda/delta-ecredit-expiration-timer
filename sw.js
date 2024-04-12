@@ -18,10 +18,10 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then(cachedResponse => {
-        const fetchPromise = fetch(e.request).then
+        const fetchPromise = fetch(event.request).then
         ((networkResponse) => {
           caches.open(CACHE_NAME).then(cache => {
-            cache.put(e.request, networkResponse.clone())
+            cache.put(event.request, networkResponse.clone())
             return networkResponse
           })
           return networkResponse
